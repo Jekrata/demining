@@ -4,11 +4,12 @@ MyWindow::MyWindow() : QWidget()
 {
     setFixedSize(300, 150);
  
-    // Construction du bouton
-    m_button = new QPushButton("Trying to show a button !", this);
- 
+    // Construction of the button
+    m_button = new QPushButton("Quit button !", this);
     m_button->setFont(QFont("Comic Sans MS", 14));
-    m_button->setCursor(Qt::PointingHandCursor);
-    m_button->setIcon(QIcon("smile.png"));
-    m_button->move(60, 50);
+    m_button->move(110, 50);
+
+    // Connection of the clic button to close the application
+    QObject::connect(m_button, SIGNAL(clicked()), qApp, SLOT(quit())); // We can remove QObject behind connect because MyWindow is a QWidget which is a QObject
+
 }
