@@ -4,6 +4,9 @@
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
+#include <QLCDNumber>
+#include <QSlider>
+#include <QProgressBar>
  
 class MyWindow : public QWidget // On hérite de QWidget (IMPORTANT)
 {
@@ -11,7 +14,10 @@ class MyWindow : public QWidget // On hérite de QWidget (IMPORTANT)
     MyWindow();
  
     private:
-    QPushButton *m_button; 
+    QLCDNumber *m_lcd;
+    QSlider *m_slider;
+    QPushButton *m_button;
+    QProgressBar *m_progressBar;
 };
  
 #endif
